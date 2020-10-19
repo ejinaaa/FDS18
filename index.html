@@ -1,1 +1,26 @@
 <!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8"> <!--인코딩선언 utf-8은 다국어-->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> 반응형에서 선언 -->
+  <title>웹카페-고정형 레이아웃</title><!--핵심 키워드를 포함해야함. SEO(검색 최적화)-검색과 연관성있는 영역. SEO를 고려해서 작성하지 않으면 접근성을 포기하게 됨-->
+  <!--meta 풍부하게 삽입하는 것이 좋음. 오픈그래프-->
+  <link rel="stylesheet" href="./css/stylesheet.css">
+</head>
+<body>
+  <div class="skip-nav"><a href="#">본문 바로가기</a></div><!--키보드로 이동할 때. 반복되는 내용(내비)을 스킵. 가장 첫머리에.-->
+  <!--header.header{header}중괄호안은 노드에 들어갈 내용-->
+  <header class="header">header</header>
+  <div class="visual">visual</div>
+  <!--main.main>div.group.group${group$}*3-->
+  <main class="main">
+    <div class="group group1">group1</div>
+    <div class="group group2">group2</div>
+    <div class="group group3">group3</div>
+  </main>
+  <div class="slogan">slogan</div>
+  <footer class="footer">
+    <div class="footer-wrapper">footer</div>
+  </footer>
+</body>
+</html>
