@@ -1,12 +1,86 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 @import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
 @import url(./fontello.css);
-
-body {
-  font-family: 'Spoqa Han Sans', 'Sans-serif'; /*글꼴 군(genery family)을 말함. 해당 폰트가 에러등으로 인해 표시를 못할 경우 해당 로컬의 글꼴군의 폰트패밀리로 보여줌.*/
+body *, body *::before, body *::after {
+  box-sizing: border-box;
 }
 
+html {
+  font-size: 10px;
+}
+body {
+  font-family: 'Spoqa Han Sans', 'Sans-serif'; /*글꼴 군(genery family)을 말함. 해당 폰트가 에러등으로 인해 표시를 못할 경우 해당 로컬의 글꼴군의 폰트패밀리로 보여줌.*/
+  font-size: 1.4rem;
+  color: #181818;
+  background: #fff;
+}
+/* 모던 브라우저 display:flex; */
+/* body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+} */
 /* 스킵 내비게이션 */
 .skip-nav {
   display: none; /*영구적인 none일 때 쓰면 안됨*/
+}
+
+/* 레이아웃 */
+.header,
+.visual,
+.main,
+.slogan {
+  width: 940px;
+  margin: 0 auto;
+}
+.header {
+  background: yellow;
+}
+.visual {
+  background: lime;
+  height: 120px;
+}
+/* 모던 브라우저 */
+/* .main {
+  background: skyblue;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly; IE 11이하는 지원하지 않음
+  justify-content: space-between; IE 11이하 지원함
+  align-items: center;
+  padding: 30px;
+} */
+.main {
+  background: skyblue;
+  padding: 30px 15px;
+  overflow: hidden;
+  min-height: 450px;
+}
+/* .clearfix::after {
+  content: "";
+  display: block;
+  clear: both; display가 블록일때만 쓸 수 있음
+} */
+.group {
+  float: left;
+  margin: 0 15px;
+}
+.group1{
+  width: 250px;
+  background: blueviolet;
+}
+.group2{
+  width: 380px;
+  background: grey;
+}
+.group3{
+  width: 190px;
+  background: tomato;
+}
+.slogan {
+  background: orange;
+}
+.footer {
+  background: pink;
+  width: 100%;
 }
