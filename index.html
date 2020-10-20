@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html lang="ko-KR">
+<html lang="ko-KR"><!--lang속성으로 해당 문서의 언어를 지정해줌. 값을 ko를 넣어도 되지만 ko-KR를 넣어 남한에서 사용하는 한국어를 표시.-->
 <head>
-  <meta charset="UTF-8"> <!--인코딩선언 utf-8은 다국어-->
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> 반응형에서 선언 -->
-  <title>웹카페-고정형 레이아웃</title><!--핵심 키워드를 포함해야함. SEO(검색 최적화)-검색과 연관성있는 영역. SEO를 고려해서 작성하지 않으면 접근성을 포기하게 됨-->
-  <!--meta 풍부하게 삽입하는 것이 좋음. 오픈그래프-->
+  <meta charset="UTF-8"> <!--문자의 인코딩방식 선언. utf-8은 다국어 지원-->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> 반응형에서 선언하며 웹 화면의 너비, 초기 스케일값 등을 설정. -->
+  <title>웹카페-고정형 레이아웃</title><!--핵심 키워드를 포함해야함. 검색과 연관성있는 영역이기 때문에 SEO(검색 최적화)O를 고려해서 작성하지 않으면 접근성을 포기하게 됨.-->
+  <!--meta 데이터는 풍부하게 삽입하는 것이 좋음. 오픈그래프(미리보기 화면의 실체를 구성하는 메타 데이터의 새로운 표기 방법)-->
   <link rel="stylesheet" href="./css/stylesheet.css">
 </head>
 <body>
-  <div class="skip-nav"><a href="#">본문 바로가기</a></div><!--키보드로 이동할 때. 반복되는 내용(내비)을 스킵. 가장 첫머리에.-->
+  <div class="skip-nav"><a href="#">본문 바로가기</a></div><!--키보드로 이동할 때. 반복되는 내용(내비)을 스킵. 가장 첫머리에 삽입.-->
   <!--header.header{header}중괄호안은 노드에 들어갈 내용-->
   <header class="header">
-    <h1 class="logo"><a href="#"><img src="./images/logo.png" alt="Web Cafe"></a></h1>
+    <h1 class="logo"><a href="#"><img src="./images/logo.png" alt="Web Cafe"></a></h1><!--alt속성으로는 해당 이미지를 설명하는 텍스트를 넣어야 함. 단순하게 '로고' 안됨.-->
     <ul class="member">
       <li>
         <a href="#">홈</a>
       </li>
       <li>
         <span class="divider" aria-hidden="true">ㅣ</span>
+        <!-- divider를 한글 'ㅣ'로 삽입하면 한글 라인 맞추기 좋음. 뒷 li에 divider를 포함시켜 유지보수 시 한 번 복제로 간편하게 만들어줌. aria-hidden="true"속성을 넣어 눈에는 보이지만 스크린리더기에서는 읽지 않도록 만들어줌. 디자인상 필요하지만 구조상 필요없는 경우.-->
         <a href="#">로그인</a>
       </li>
       <li>
@@ -35,12 +36,12 @@
     </ul>
   </header>
   <div class="visual">visual</div>
-  <!--main.main>div.group.group${group$}*3-->
+  <!--main.main>div.group.group${group$}*3 에멧기능. $는 숫자를 표시하고 중괄호는 노드안에 들어갈 내용. -->
   <main class="main clearfix">
     <div class="group group1">group1</div>
     <div class="group group2">group2</div>
     <div class="group group3">group3</div>
-    <!-- <div class="clearfix"></div> -->
+    <!-- <div class="clearfix"></div> float해제방법1 - 플롯 요소들의 마지막 형제요소로 빈 박스를 추가하고 css설정이 된 clearfix 클래스를 추가해 해제하는 방법이지만 유연하게 사용불가하기때문에 권장하지 않음. -->
   </main>
   <div class="slogan">slogan</div>
   <footer class="footer">

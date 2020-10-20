@@ -3,23 +3,23 @@
 @import url(./fontello.css);
 body *, body *::before, body *::after {
   box-sizing: border-box;
-}
+} /* 어느 요소에나 패딩이나 보더값을 주어도 정해놓은 사이즈는 바뀌지 않도록 설정. html의 모든 가 아닌 body안의 있는 모든 요소들를 선택해 불필요하게 속성이 들어가 성능이 나빠지지 않도록함. */
 
 html {
-  font-size: 10px;
+  font-size: 10px; /* root가 되는 html에만 폰트값을 px로 지정하고 자식요소들은 rem단위를 사용해 전체 폰트 사이즈 수정 시 용이하게 만들어줌. */
 }
 body {
-  font-family: 'Spoqa Han Sans', 'Sans-serif'; /*글꼴 군(genery family)을 말함. 해당 폰트가 에러등으로 인해 표시를 못할 경우 해당 로컬의 글꼴군의 폰트패밀리로 보여줌.*/
+  font-family: 'Spoqa Han Sans', 'Sans-serif'; /* 글꼴 군(genery family)을 말함. 해당 폰트가 에러등으로 인해 표시를 못할 경우 로컬의 해당 글꼴군의 폰트 패밀리로 보여줌.*/
   font-size: 1.4rem;
   color: #181818;
   background: #fff;
 }
 /* 링크 스타일 */
 a {
-  color: inherit; /*부모의 값을 상속 받음*/
+  color: inherit; /* 부모의 값을 상속 받음. 부모의 속성값만 변경해 자식까지 동일한 상속값으로 변경됨. */
   text-decoration: none;
 }
-/* 모던 브라우저 display:flex; */
+/* 모던 브라우저 정렬 방법 display:flex; */
 /* body {
   display: flex;
   flex-flow: column nowrap;
@@ -27,7 +27,7 @@ a {
 } */
 /* 스킵 내비게이션 */
 .skip-nav {
-  display: none; /*영구적인 none일 때 쓰면 안됨*/
+  display: none; /*영구적인 none일 때는 사용하면 안됨*/
 }
 
 /* 레이아웃 */
@@ -41,13 +41,13 @@ a {
 /* 헤더 */
 .header {
   background: yellow;
-  position: relative;
-  border-radius: 0 0 15px 15px;
+  position: relative; /* relative는 normal flow이면서 위치를 잡아줌. */
+  border-radius: 0 0 15px 15px; /* x축과 y축을 나눠서 사용시 border-radius: x1 x2 x3 x4/y1 y2 y3 y4;로 설정 가능. */
   padding: 0 30px;
 }
 /* 로고 */
 .logo {
-  position: absolute;
+  position: absolute; /* position의 기본값인 static값을 뺀 나머지의 position값을 가진 부모를 기준으로 위치를 잡음. 기준이 position이 부여되지 않은 root가 되지 않도록 position:relative;를 기준이 될 요소에 꼭 찍어주는 것이 좋음. */
   top: 50px;
   left: 65px;
   margin: 0;
@@ -57,7 +57,7 @@ a {
   margin: 0;
   padding-left: 0;
   list-style: none;
-  text-align: right;
+  text-align: right; /* 텍스트 정렬 속성이지만 인라인요소들을 정렬하는데도 사용 가능. 적용 시 .member li가 display:inline-block; 설정이 되어있기 때문에 오른쪽으로 정렬이됨.*/
 }
 .member li {
   display: inline-block;
@@ -71,26 +71,33 @@ a {
   background: lime;
   height: 120px;
 }
-/* 모던 브라우저 */
+/* 모던 브라우저 정렬 방법 display:flex; */
 /* .main {
   background: skyblue;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-evenly; IE 11이하는 지원하지 않음
-  justify-content: space-between; IE 11이하 지원함
+  justify-content: space-evenly; 시작과 끝안에서 요소의 양 옆이 동일한 여백을 갖도록 함. IE 11이하는 지원하지 않음.
+  justify-content: space-between; 
   align-items: center;
   padding: 30px;
 } */
 .main {
   background: skyblue;
   padding: 30px 15px;
-  overflow: hidden;
-  min-height: 450px;
+  overflow: hidden; /* float해제방법2 - 자식의 부유로 인해 부모가 자식높이를 잃어버려 높이를 가지지 못할 때 사용. 자식요소의 사이즈를 읽어들이면서 자연스레 높이가 잡히게 됨(BFC). 이 때 부모 요소에 height가 들어가있으면 안됨. */
+  min-height: 450px; /* 최저 높이를 설정해 요소의 높이가 min-height값보다 작아지는 것을 방지. */
 }
+/* float해제방법3 - 정렬시킬 요소의 부모에 클래스를 주어 해제 */
 /* .clearfix::after {
   content: "";
   display: block;
-  clear: both; display가 블록일때만 쓸 수 있음
+  clear: both; display가 블록일때만 쓸 수 있으므로 display: block;을 같이 설정해줌.
+} */
+/* float해제방법1 - 플롯 요소의 마지막 형제요소로 html에 빈 박스를 추가하고 .clearfix를 설정해 클래스 추가 */
+/* .clearfix {
+  content: "";
+  display: block;
+  clear: both; display가 블록일때만 쓸 수 있으므로 display: block;을 같이 설정해줌.
 } */
 .group {
   float: left;
