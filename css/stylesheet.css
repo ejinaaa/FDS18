@@ -14,6 +14,11 @@ body {
   color: #181818;
   background: #fff;
 }
+/* 링크 스타일 */
+a {
+  color: inherit; /*부모의 값을 상속 받음*/
+  text-decoration: none;
+}
 /* 모던 브라우저 display:flex; */
 /* body {
   display: flex;
@@ -33,8 +38,34 @@ body {
   width: 940px;
   margin: 0 auto;
 }
+/* 헤더 */
 .header {
   background: yellow;
+  position: relative;
+  border-radius: 0 0 15px 15px;
+  padding: 0 30px;
+}
+/* 로고 */
+.logo {
+  position: absolute;
+  top: 50px;
+  left: 65px;
+  margin: 0;
+}
+/* 안내 링크 목록 */
+.member {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  text-align: right;
+}
+.member li {
+  display: inline-block;
+  padding: 2px 0;
+}
+.member li a {  
+  padding: 6px 0;
+  display: inline-block;
 }
 .visual {
   background: lime;
