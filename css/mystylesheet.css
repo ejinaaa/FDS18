@@ -25,7 +25,7 @@ body {
   font-family: 'Spoqa Han Sans', 'Sans-serif'; /* 글꼴 군(genery family)을 말함. 해당 폰트가 에러등으로 인해 표시를 못할 경우 로컬의 해당 글꼴군의 폰트 패밀리로 보여줌.*/
   font-size: 1.4rem;
   color: #181818;
-  background: #ccc;
+  background: #fff;
 }
 /* 링크 스타일 */
 a {
@@ -53,7 +53,7 @@ a {
 }
 /* 헤더 */
 .header {
-  background: #fff;
+  background: yellow;
   position: relative; /* relative는 normal flow이면서 위치를 잡아줌. */
   border-radius: 0 0 15px 15px; /* x축과 y축을 나눠서 사용시 border-radius: x1 x2 x3 x4/y1 y2 y3 y4;로 설정 가능. */
   padding: 0 30px;
@@ -91,74 +91,40 @@ a {
   list-style: none;
   height: 47px;
   border-radius: 0 0 5px 5px;
-  padding-left: 225px;
+  overflow: hidden;
+  padding-left: 260px;
 }
 .menu-item {
-  position: relative;
   float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 10px;
+}
+.menu-item::before {
+  content:"";
+  width: 1px;
+  height: 47px;
+  background-color: #fff;
+  margin-right: 10px;
 }
 .menu-button {
-  cursor: pointer;
   font-size: 1.6rem;
   color: #fff;
   font-weight: 700;
   background: transparent;
-  line-height: 45px;
-  padding: 0;
   border: none;
-  border-left: 2px solid rgba(255, 255, 255, 0.5);
-  padding: 0 20px;
-  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;/*이 속성을 이용해 텍스트에 윤곽을 줌.*/
-  text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;/*이 속성을 이용해 텍스트에 윤곽을 줌.*/
 }
-.menu-act .menu-button{
-  color: #ff0;
-
-}
-.menu-act .menu-button::after {
-  content: "";
-  display: block; /*d:b이 되면 가상요소의 크기는 해당 요소의 크기와 같아짐.*/
-  border-top: 2px solid #000;
+.menu-act {
+  color: yellow;
+  border-bottom: 1px solid #181818;
+  padding-bottom: 10px;
 }
 .sub-menu {
   margin: 0;
   padding-left: 0;
   list-style: none;
   display: none;
-  position: absolute;
-  top: 47px;
-  left: 0;
-  white-space: nowrap; 
-  /* 자식li에 position:absolute설정 했을 시 자식의 가용범위는 p:r준 부모의 영역만큼이됨. 정렬시킬 li는 inline-block으로 정렬했기때문에 블록 성격을 갖고 있는데, 블록은 요소가 가용 범위를 벗어나면 밑으로 떨어지고 인라인은 가용범위를 벗어나면 벗어나는 부분이 잘려서 밑으로 떨어지게 됨. 현재 블록성격을 갖고 인라인방식으로 정렬되는 inline-block이 설정되어있기 떄문에 가용범위를 벗어나면 밑으로 떨어지게 됨. 이것을 해결하는 방법으로 white-space:nowrap;속성을 추가하면 요소가 가용범위를 벗어나도 밑으로 떨어지지 않고 가용범위를 벗어나더라도 wrap하지 않고 한줄로 정렬시켜줌.*/
-}
-.sub-menu li, .sub-menu a {
-  display: inline-block;
-}
-.sub-menu a {
-  padding: 8px 0;
-  margin-right: 10px;
-}
-.sub-menu a::before {
-  content: "\f192";
-  font-family: 'fontello'; 
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: .2em;
-}
-.sub-menu a:hover::before,
-.sub-menu a:focus::before { /*탭키로 포커스 받았을 때도 체크아이콘으로 바뀌지만 문제는 포커스 된 상태에서 다른 요소에 마우스 호버하면 호버된 부분도 같이 체크아이콘으로 바뀌는 문제가 생김. 이부분은 JS에서 다뤄야함. 타협.*/
-  content: "\e800";
-}
-.menu-act .sub-menu {
-  display: block;
-}
-.sub-menu1, .sub-menu2, .sub-menu3 {
-  left: 0;
-}
-.sub-menu4, .sub-menu5, .sub-menu6 {
-  /* left: initial; 값을 초기값으로 돌려줌.*/
-  right: 0;
 }
 .visual {
   background: lime;
