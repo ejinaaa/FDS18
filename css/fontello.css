@@ -19,7 +19,7 @@
   }
 }
 */
- 
+ /* 요소에 클래스를 부여해 아이콘을 삽입할 때 해당 클래스만 삽입 */
  [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: 'fontello';
   font-weight: normal;
@@ -53,7 +53,7 @@
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
- 
+/* 가상요소로 아이콘을 넣어줄 때 content속성에 값으로 넣고 위에 css 스타일 적용시킴 */
 .icon-ok:before { content: '\e800'; } /* '' */
 .icon-plus:before { content: '\e801'; } /* '' */
 .icon-search:before { content: '\e802'; } /* '' */
