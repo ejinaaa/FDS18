@@ -1,0 +1,124 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
+@import url(./fontello.css);
+
+/* reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 박스사이징 설정 */
+body *, body::before *, body::after * {
+  box-sizing: border-box;
+}
+body {
+  background: lightgrey;
+}
+/* 스킵 내비게이션 */
+.skip-nav {
+  display: none;
+}
+/* 레이아웃 */
+.header, .visual, .main, .slogan, .footer-inner {
+  width: 940px;
+  margin: 0 auto;
+}
+/* 헤더 */
+.header {
+  background: #fff;
+  border-radius: 0 0 15px 15px;
+  position: relative;
+}
+/* 로고 */
+.logo {
+  position: absolute;
+}
+/* 멤버 */
+.member-menu {
+
+}
+.member-item {
+  float: left;
+}
+
+
+
+/* 비쥬얼 */
+.visual {
+  background: salmon;
+}
+/* 메인 */
+.main {
+  background: lightblue;
+  min-height: 450px;
+}
+.group {
+  float: left;
+  overflow: hidden;
+}
+.group1 {
+  width: 250px;
+  background: goldenrod;
+}
+.group2 {
+  width: 380px;
+  background: blueviolet;
+}
+.group3 {
+  width: 190px;
+  background: seagreen;
+}
+/* 슬로건 */
+.slogan {
+  background: orange;
+}
+/* 푸터 */
+.footer {
+  width: 100%;
+  background: pink;
+}

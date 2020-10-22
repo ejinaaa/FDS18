@@ -62,7 +62,7 @@ a {
   position: absolute; /* position의 기본값인 static값을 뺀 나머지의 position값을 가진 부모를 기준으로 위치를 잡음. 기준이 position이 부여되지 않은 root가 되지 않도록 position:relative;를 기준이 될 요소에 꼭 찍어주는 것이 좋음. */
   top: 50px;
   left: 65px;
-  /* margin: 0; */
+  margin: 0;
 }
 /* 안내 링크 목록 */
 .member {
@@ -159,9 +159,50 @@ a {
   /* left: initial; 값을 초기값으로 돌려줌.*/
   right: 0;
 }
+/* 텍스트 및 배경 애니메이션 - 비주얼 */
+@keyframes textAni {
+  /* from {} 애니메이션 시작 프레임 키워드
+  to {} 끝나는 프레임 */
+  0% {
+    font-size: 12px;
+    color: rgba(0,0,0,0);
+    /*margin-top: 0;
+    margin-left: 0;부모와 마진 병합이 일어날 수 있음.*/
+    /*padding-top: 0;
+      padding-left: 0;해당 요소의 배경색이 있을 경우 이만큼 색이 칠해지기때문에 배경색이 투명한 경우에 사용.
+    */
+    /*top: 0;
+    left: 0;*/
+    transform: translate(0, 0);
+  }
+  100% {
+    font-size: 24px;
+    color: rgba(0,0,0,1);
+    /*margin-top: 75px;
+    margin-left: 400px;부모와 마진 병합이 일어날 수 있음. reflow현상이 일어나기 때문에 성능이 떨어지는 문제가 있음.*/
+    /*padding-top: 75px;
+      padding-left: 400px;해당 요소의 배경색이 있을 경우 이만큼 색이 칠해지기때문에 배경색이 투명한 경우에 사용.
+    */
+    /*top: 75px;
+    left: 400px;*/
+    transform: translate(400px, 75px);
+  }
+}
 .visual {
   background: lime;
   height: 120px;
+  /*border-top: 1px solid transparent;  부모에 보더를 넣어 막을 생성해 자식과 부모의 마진병합을 막는 방법으로 쓰이기도 함. 이경우 boxsizing을 borderbox롤 설정해야 높이에 영향을 안받음*/
+  /* position: relative; */
+}
+.visual-text {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  animation-name: textAni;
+  animation-duration: 3000ms;
+  animation-fill-mode: forwards;/*애니는 다 실행이 되면 0%로 돌아옴. 100%의 상태로 멈추게 하고 싶으면 fill-mode 속성을 forwards로 추가*/
+  background-color: pink;
+  /* position: absolute; */
+  width: 500px;
 }
 /* 모던 브라우저 정렬 방법 display:flex; */
 /* .main {
