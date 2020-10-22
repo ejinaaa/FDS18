@@ -266,8 +266,9 @@ a {
 }
 .group1{
   width: 250px;
-  background: blueviolet;
 }
+/* 로그인 */
+
 .group2{
   width: 380px;
   background: grey;
