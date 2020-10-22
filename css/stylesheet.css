@@ -160,6 +160,14 @@ a {
   right: 0;
 }
 /* 텍스트 및 배경 애니메이션 - 비주얼 */
+@keyframes bgAni {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @keyframes textAni {
   /* from {} 애니메이션 시작 프레임 키워드
   to {} 끝나는 프레임 */
@@ -181,18 +189,39 @@ a {
     /*margin-top: 75px;
     margin-left: 400px;부모와 마진 병합이 일어날 수 있음. reflow현상이 일어나기 때문에 성능이 떨어지는 문제가 있음.*/
     /*padding-top: 75px;
-      padding-left: 400px;해당 요소의 배경색이 있을 경우 이만큼 색이 칠해지기때문에 배경색이 투명한 경우에 사용.
-    */
+      padding-left: 400px;해당 요소의 배경색이 있을 경우 이만큼 색이 칠해지기때문에 배경색이 투명한 경우에 사용.*/
     /*top: 75px;
     left: 400px;*/
     transform: translate(400px, 75px);
   }
 }
 .visual {
-  background: lime;
   height: 120px;
   /*border-top: 1px solid transparent;  부모에 보더를 넣어 막을 생성해 자식과 부모의 마진병합을 막는 방법으로 쓰이기도 함. 이경우 boxsizing을 borderbox롤 설정해야 높이에 영향을 안받음*/
-  /* position: relative; */
+  position: relative;
+}
+.visual::before, .visual::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  /* animation-name: bgAni; 필수 속성
+  animation-duration: 2000ms; 필수 속성. 애니되는 시간
+  animation-iteration-count: infinite;
+  animation-direction: alternate; 프레임 방향을 정해줌. alternate는 왕복.*/
+  animation: bgAni 2000ms alternate infinite ease-in-out;/* 단축속성. 필수 속성들을 먼저 작성해야함(duration). delay는 필수가 아니기 때문에 duration 다음에 시간을 넣어줘야 함.*/
+}
+.visual::before {
+  background-image: url(./images/ani_flower_01.png), url(./images/ani_flower_02.png);
+  background-position: 0 -10px, 640px 0;
+}
+.visual::after {
+  background-image: url(./images/ani_flower_03.png), url(./images/ani_flower_04.png);
+  background-position: 300px 0, 800px 0;
+  animation-delay: 1000ms;
 }
 .visual-text {
   margin: 0;
@@ -200,7 +229,6 @@ a {
   animation-name: textAni;
   animation-duration: 3000ms;
   animation-fill-mode: forwards;/*애니는 다 실행이 되면 0%로 돌아옴. 100%의 상태로 멈추게 하고 싶으면 fill-mode 속성을 forwards로 추가*/
-  background-color: pink;
   /* position: absolute; */
   width: 500px;
 }
