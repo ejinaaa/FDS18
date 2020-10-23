@@ -3,122 +3,45 @@
 @import url(./fontello.css);
 
 /* reset */
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/* 박스사이징 설정 */
-body *, body::before *, body::after * {
+body *, body::before, body::after {
   box-sizing: border-box;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul, ol {
+  list-style: none;
+}
+html {
+  font-size: 10px;
+}
 body {
-  background: lightgrey;
+  background: #fff;
+  color: #181818;
+  width: 100%;
+  background: grey;
 }
-/* 스킵 내비게이션 */
-.skip-nav {
-  display: none;
-}
-/* 레이아웃 */
-.header, .visual, .main, .slogan, .footer-inner {
+
+/* layout */
+.header, .visual, .main, .slogan, .footer {
   width: 940px;
   margin: 0 auto;
 }
-/* 헤더 */
+/* header */
 .header {
-  background: #fff;
-  border-radius: 0 0 15px 15px;
   position: relative;
+  background: #fff;
+  border-radius: 0 0 5px 5px;
 }
-/* 로고 */
 .logo {
   position: absolute;
+  left: 0;
+  top: 20px;
 }
-/* 멤버 */
-.member-menu {
-
+.member {
+  text-align: right;
 }
 .member-item {
-  float: left;
-}
-
-
-
-/* 비쥬얼 */
-.visual {
-  background: salmon;
-}
-/* 메인 */
-.main {
-  background: lightblue;
-  min-height: 450px;
-}
-.group {
-  float: left;
-  overflow: hidden;
-}
-.group1 {
-  width: 250px;
-  background: goldenrod;
-}
-.group2 {
-  width: 380px;
-  background: blueviolet;
-}
-.group3 {
-  width: 190px;
-  background: seagreen;
-}
-/* 슬로건 */
-.slogan {
-  background: orange;
-}
-/* 푸터 */
-.footer {
-  width: 100%;
-  background: pink;
+  display: inline-block;
 }
