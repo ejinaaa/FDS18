@@ -360,7 +360,6 @@ ul, li {
 
 /* 유효성 검사 배너 */
 .validation-list {
-  background: yellow;
   margin: 25px 0 0 0;
   list-style: none;
   padding-left: 0;
@@ -377,6 +376,21 @@ ul, li {
   /* bg position 단위를 퍼센트로 주면 이미지의 해당 위치를 배경의 해당 위치를 기준으로 배치함*/
   padding: 10px 10px 10px 50px;
   margin-top: 10px;
+}
+
+/* 웹 관련 용어 */
+.term {
+  background: linear-gradient(to bottom, #ccc, #eee);
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px 15px;
+  
+}
+.term-heading {
+  margin: 0;
+  padding: 5px 0;
+  font-size: 1.6rem;
 }
 
 /* 그룹2 */
