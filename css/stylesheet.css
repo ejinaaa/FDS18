@@ -358,6 +358,27 @@ ul, li {
   padding: 8px 0;
 }
 
+/* 유효성 검사 배너 */
+.validation-list {
+  background: yellow;
+  margin: 25px 0 0 0;
+  list-style: none;
+  padding-left: 0;
+}
+.validation-list a:hover, a:focus {
+  color: red;
+}
+.validation-list a {
+  display: block;
+  border-radius: 20px;
+  border: 1px solid #aaa;
+  background: #fff;
+  background: url(./images/validation_icon.png) 25px 50% / 20px 20px no-repeat, linear-gradient(to bottom, #eee, #ccc);
+  /* bg position 단위를 퍼센트로 주면 이미지의 해당 위치를 배경의 해당 위치를 기준으로 배치함*/
+  padding: 10px 10px 10px 50px;
+  margin-top: 10px;
+}
+
 /* 그룹2 */
 .group2{
   width: 380px;
@@ -367,7 +388,7 @@ ul, li {
   width: 190px;
   background: ;
 }
-/* 로그인 */
+
 
 .slogan {
   background: orange;
