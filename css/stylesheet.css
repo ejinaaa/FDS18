@@ -3,10 +3,10 @@
 @import url(./fontello.css);
 /* 숨김 제목 및 숨김 콘텐츠 */
 .a11y-hidden, legend{
-  position: absolute; /* 화면의 영역을 차지않게 하기위해 독립된 블록으로 만들어 띄워줌. */
+  position: absolute; /* 화면의 영역을 차지않게 하기위해 독립된 블록으로 만들어 띄워줌. 하지만 BFC 요소로 바뀌어 버리게 되어 스크린리더가 텍스트를 읽을 때 끊어 읽어줄 수 있기 때문에 좋은 방법은아닐 수 있음. */
   width: 1px;
   height: 1px;
-  margin: 0;/*숨김콘텐츠에 기본 마진값이 있을 수 있으므로 초기화시켜줌*/
+  margin: 0;/* 태그에 숨김콘텐츠에 기본 마진값이 있을 수 있으므로 초기화시켜줌*/
   overflow: hidden;
   clip-path: polygon(0 0, 0 0, 0 0); /*clip-path의 polygon함수를 이용해 픽셀의 path를 0값으로 바꿔 1px의 너비를 없애 눈에는 보이지 않지만 그 자리에 존재하게 만듬. x y 순으로 값이 들어감.*/
   /* top/left: -9999px;를 줘서 offset을 조정하거나 text-indent: -9999px;로 밀어버리면 키보드 탭키를 이용해 웹을 이용하는 사용자에겐 순차적으로 요소들을 읽어내려가다가 이 클래스 위치에서 갑자기 상단이나 왼쪽으로 이동하는 현상이 있을 수 있으므로 접근성에서 좋지 않음. */
@@ -279,11 +279,10 @@ ul, li {
   background: radial-gradient(circle at right top, #efa22f, #ed702d);
   border-radius: 5px;
   box-shadow: 5px 5px 0 0 #ccc;
-  padding: 15px 10px;
-  
+  padding: 15px 10px;  
 }
 .login-heading {
-  margin: 0;
+  margin: 0;/*<h2>는 기본 마진값이 설정 되어 있으므로 초기화 시킴. */
   color: #ff0;
   font-size: 1.6rem;
   font-weight: 700;
@@ -312,16 +311,16 @@ ul, li {
   vertical-align: middle;
 }
 .login-form label {
-  width: 4em;
+  width: 4em;/* 글자 갯 수만큼 공간을 만들어 주거나 사이즈를 정하고 싶을 때 사용하면 유용. */
   display: inline-block;
 }
 .login-form input {
   width: 90px;
-  height: 22px;
+  height: 22px; /* 크로스브라우징 하려면 input태그는 브라우저별로 크기가 다르기 때문에 width, height를 지정해 주어야 한다. input 태그는 inline block이기 때문에 디스플레이를 바꿀 필요가 없음. */
   border: 1px solid #ccc;
   padding: 1px 1px 1px 0.5em;
 }
-.btn-login {
+.btn-login {/*button 은 inline block*/
   position: absolute;
   top: 0;
   right: 0;
@@ -373,6 +372,7 @@ ul, li {
   border: 1px solid #aaa;
   background: #fff;
   background: url(./images/validation_icon.png) 25px 50% / 20px 20px no-repeat, linear-gradient(to bottom, #eee, #ccc);
+  /* bg로 이미지를 깔면 SEO 검색 최적화 되지 않음. 접근성에서 배제시키는 요소. 해서 아이콘 같은 부가적으로 꾸며주는 것들은 bg로 넣어주면 되지만 이미지는 img태그를 넣어 삽입해 주어야 검색화 최적화, 스크린리더 사용 가능 등 접근성이 높아진다.*/
   /* bg position 단위를 퍼센트로 주면 이미지의 해당 위치를 배경의 해당 위치를 기준으로 배치함*/
   padding: 10px 10px 10px 50px;
   margin-top: 10px;
@@ -380,17 +380,61 @@ ul, li {
 
 /* 웹 관련 용어 */
 .term {
-  background: linear-gradient(to bottom, #ccc, #eee);
+  background: linear-gradient(#ccc, #eee);
   border: 1px solid #aaa;
-  border-radius: 5px;
+  padding: 15px;  
   margin-top: 20px;
-  padding: 10px 15px;
-  
+  border-radius: 5px;
 }
 .term-heading {
-  margin: 0;
-  padding: 5px 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  /*<h2>에 agent값으로 margin-top/bottom이 들어있기 때문에 0으로 초기화 시켜줌. 재정의 안해도 될 속성을 재정의하는 것은 성능면에서 좋지 않기 때문에 필요한 속성만 초기화 시켜 사용하는 것이 좋음.*/
   font-size: 1.6rem;
+  font-weight: 700;
+  /*이미 볼드값이 있지만 heading level을 다른 걸로 바꿀 수 있으므로 font-weight을 따로 설정해줌*/
+}
+.term-list {
+  margin: 15px 0 0 0;
+  /*<dl> agent값으로 margin-top/bottm값이 설정되어 있기 때문에 0으로 초기화 시켜줌*/
+  background: yellow;
+}
+.term-list > div {
+  overflow: hidden;
+  background: skyblue;
+}
+.term-list > div:nth-child(even) {
+  margin-top: 15px;
+}
+.term-list-subject,
+.term-list-brief {
+  color: #296897;
+  background: pink;
+  float: right;
+  width: 145px;
+}
+.term-list-thumbnail {
+  float: left;
+  background: lime;
+}
+.term-list-thumbnail img {
+  display: block;
+}
+.term-list-brief {
+  background: orange;
+  margin-top: 5px;
+  line-height: 1.5;
+}
+.term-list dd {
+  margin-left: 0;
+  /*<dd> agent값으로 margin-left값이 들어있기 때문에 0으로 초기화시켜줌.*/
+}
+.term-list > div:nth-child(even) .term-list-subject,
+.term-list > div:nth-child(even) .term-list-brief {
+  float: left;
+}
+.term-list > div:nth-child(even) .term-list-thumbnail {
+  float: right;
 }
 
 /* 그룹2 */
