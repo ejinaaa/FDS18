@@ -399,6 +399,35 @@ ul, li {
   /*<dl> agent값으로 margin-top/bottm값이 설정되어 있기 때문에 0으로 초기화 시켜줌*/
   background: yellow;
 }
+/* flex박스 이용해 배치 */
+/* .term-list>div {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  height: 70px;
+  width: 218px;
+}
+.term-list dd {
+  margin-left: 0;
+}
+.term-list-subject,
+.term-list-brief {
+  width: 145px;
+}
+.term-list-subject {
+  color: #296897;
+}
+.term-list-thumbnail {
+  order: -1;
+}
+.term-list>div:nth-child(even) {
+  margin-top: 15px;
+}
+.term-list>div:nth-child(even) .term-list-thumbnail {
+  order: 3;
+}
+*/
+/* float을 이용해 배치*/
 .term-list > div {
   overflow: hidden;
   background: skyblue;
@@ -437,11 +466,51 @@ ul, li {
   float: right;
 }
 
+
 /* 그룹2 */
 .group2{
   width: 380px;
-  background:y;
 }
+
+/* 검색 폼 */
+.search-form {
+  background: #ccc linear-gradient(#ccc, #eee);/*gradient를 지원하지 못할 경우 앞의 콜백할 컬러값이 나오게됨.*/
+  border: 1px solid #aaa;
+  border-bottom-color: transparent;/*보더는 그대로 두고 색상만 티 안나게 변경.*/
+  border-radius: 15px 15px 0 0;
+  padding: 15px 25px 10px;
+}
+.search-form fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.search-form-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  }
+.search-form input[name="search"] {/*class없으면 name속성을 선택해 사용.*/
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 1px 1px 1px 0.5em;
+  height: 22px;
+  /*flex-grow: 1;는 firefox에서 문제 야기시킴*/
+  width: 190px;
+  /* margin: 0 5px; */
+}
+.search-form .btn-search {
+  background: #333;
+  border: 1px solid #aaa;
+  color: #fff;
+  border-radius: 3px;
+  height: 22px;
+  padding: 0 10px;
+}
+
+
+
 .group3{
   width: 190px;
   background: ;
