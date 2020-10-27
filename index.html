@@ -224,11 +224,12 @@
     </div>
     <div class="group group2">
       <h2 class="a11y-hidden">검색</h2>
-      <form method="POST" action="https://formspree.io/seulbinim@gmail.com" class="search-form" target="_self">
+      <form method="POST" action="https://formspree.io/seulbinim@gmail.com" class="search-form">
         <fieldset>
           <!--html5에서는 생략 가능하지만 명시적으로 넣어주는 것이 좋음.-->
           <legend>검색 폼</legend>
-          <div class="search-form-container"><label for="search"><span class="icon-search"
+          <div class="search-form-container">
+            <label for="search"><span class="icon-search"
                 aria-hidden=true></span>자료검색</label>
             <input type="search" id="search" name="search" placeholder="검색어를 입력하세요." required>
             <!--label과 input은 불리하는 것을 권장. type의 search는 html5의 새로 추가된 값.-->
@@ -237,6 +238,65 @@
           </div>
         </fieldset>
       </form>
+      <div class="board">
+        <section class="notice is-active">
+          <h2 class="notice-heading tab" id="noticeHeading">
+            <a href="#" role="button">공지사항</a><!--역할을 버튼으로 바꿔줌-->
+          </h2>
+          <ul class="notice-list">
+            <li>
+              <a href="#">HTML의 모든 것을 알려주마 샘플 활용법</a>
+              <time datetime="2020-10-27T14:38:56">2020.10.27</time><!--기계처리가 불가능한 텍스트로 날짜 인식하지 못하므로 datetime속성을 이용해 날짜 삽입해줌.-->
+            </li>
+            <li>
+              <a href="#">W3C 사이트 리뉴얼 및 공지사항</a>
+              <time datetime="2020-10-27T14:38:56">2020.10.27</time>
+            </li>
+            <li>
+              <a href="#">KWCAG 2.1 소식</a>
+              <time datetime="2020-10-27T14:38:56">2020.10.27</time>
+            </li>
+            <li>
+              <a href="#">서버 점검으로 인한 사이트 이용안내 입니다.</a>
+              <time datetime="2020-10-27T14:38:56">2020.10.27</time>
+            </li>
+            </li>
+            <li>
+              <a href="#">여러분들이 생각하는 웹 접근성에 대해 이야기를 나누어 봅시다.</a>
+              <time datetime="2020-10-27T14:38:56">2020.10.27</time>
+            </li>
+          </ul>
+          <a href="#" class="notice-more icon-plus" aria-labelledby="noticeHeading" title="공지사항">더보기</a><!--직관적이지 않기 때문에 적절하지 않은 링크 텍스트이므로 태그에 title속성(툴팁)이나 aria-label을 넣어 링크의 목적지를 알려줄 보충설명을 해주면 되는데 다른 태그의 내용을 연결해 설명으로 사용할 때는 aria-labelledby속성에 연결할 태그의 id값을 넣어 연결해 사용. 하지만 툴팁이 뜨지 않기때문에 title속성도 같이 넣어주어도 좋음. 하나만 넣으면 되긴함. title은 장애인을 위함.-->
+        </section>
+        <section class="pds">
+          <h2 class="pds-heading tab" id="pdsHeading">
+            <a href="#" role="button">자료실</a>
+          </h2>
+          <ul class="pds-list">
+            <li>
+              <a href="#">디자인 사이트 링크 모음</a>
+              <time datetime="2020-10-28T14:38:56">2020.10.28</time>
+            </li>
+            <li>
+              <a href="#">웹 접근성 관련 자료 모음</a>
+              <time datetime="2020-10-28T14:38:56">2020.10.28</time>
+            </li>
+            <li>
+              <a href="#">예제 샘플 응용해보기</a>
+              <time datetime="2020-10-28T14:38:56">2020.10.28</time>
+            </li>
+            <li>
+              <a href="#">웹 접근성 향상을위한 국가 표준 기술 가이드라인</a>
+              <time datetime="2020-10-28T14:38:56">2020.10.28</time>
+            </li>
+            <li>
+              <a href="#">로얄티 프리 이미지 자료</a>
+              <time datetime="2020-10-28T14:38:56">2020.10.28</time>
+            </li>
+          </ul>
+          <a href="#" class="pds-more icon-plus" aria-labelledby="pdsHeading" title="자료실">더보기</a>
+        </section>
+      </div>
     </div>
     <div class="group group3">group3</div>
     <!-- <div class="clearfix"></div> float해제방법1 - 플롯 요소들의 마지막 형제요소로 빈 박스를 추가하고 css설정이 된 clearfix 클래스를 추가해 해제하는 방법이지만 유연하게 사용불가하기때문에 권장하지 않음. -->
@@ -246,5 +306,4 @@
     <div class="footer-wrapper">footer</div>
   </footer>
 </body>
-
 </html>
