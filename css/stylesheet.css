@@ -33,9 +33,6 @@ a {
   color: inherit; /* inherit값으로 부모의 값을 상속 받음. 부모의 속성값만 변경해 자식까지 동일한 상속값으로 변경됨. */
   text-decoration: none;
 }
-ul, li {
-  list-style: none;
-}
 /* 모던 브라우저 정렬 방법 display:flex; */
 /* body {
   display: flex;
@@ -507,6 +504,135 @@ ul, li {
   border-radius: 3px;
   height: 22px;
   padding: 0 10px;
+}
+/* display:none 이 경우에 영구적인 none이 아닌 이벤트 등을 이용해 diplay값을 조정하므로 사용 가능. */
+/* 공지사항 및 자료실 */
+/* .board {
+  position: relative;
+  margin-top: 20px;
+}
+.notice, .pds {
+  position: absolute;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.notice-heading, .pds-heading {
+  margin: 0;
+  padding: 5px 10px;
+  background: #ccc linear-gradient(#ccc, #eee);
+  border: 1px solid #aaa;
+  border-radius: 5px 5px 0 0;
+  font-size: 1.4rem;
+  font-weight: normal;
+  color: #777;
+}
+.pds-heading {
+  margin-left: 73px;
+}
+.notice-list, .pds-list {
+  order: 3;
+  padding-left: 0;
+  display: none;
+}
+.notice-list a, 
+.notice-list time,
+.pds-list a, 
+.pds-list time {
+  display: inline-block;
+}
+.notice-list a,
+.pds-list a {
+  width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.board .icon-plus {
+  display: none;
+}
+.board .icon-plus::before {
+  color: green;
+}
+.is-active .notice-list,
+.is-active .pds-list,
+.is-active .icon-plus
+{
+  display: block;
+} */
+.board {
+  background: yellow;
+  position: relative;
+  height: 200px;/*가급적 사용하지 않는 편이 좋지만*/
+  margin-top: 20px;
+}
+.notice-list,
+.pds-list,
+.notice-more,
+.pds-more {
+  display: none;
+}
+.is-active .notice-list,
+.is-active .pds-list,
+.is-active .notice-more,
+.is-active .pds-more {
+  display: block;
+}
+.tab {
+  float: left;
+  margin: 0;
+}
+.tab a {
+  display: block;
+  border-radius: 5px 5px 0 0;
+  border: 1px solid #aaa;
+  background: #ccc linear-gradient(#ccc, #eee);
+  color: #999;
+  font-size: 1.4rem;
+  font-weight: 400;
+  padding: 5px 10px;
+}
+.is-active .tab a {
+  color: #ed702d;
+  border-color: #ed702d #ed702d #fff #ed702d;
+  background: #fff;
+}
+.notice-list, .pds-list { /*공통 클래스를 주는 것이 좋음*/
+  width: 100%;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  background: skyblue;
+  position: absolute;
+  left: 0;
+  top: 45px;
+}
+.notice-list li,
+.pds-list li {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 10px;
+}
+.notice-list a,
+.pds-list a {
+  /* flex-grow: 1; */
+  width: 280px;
+  text-overflow: ellipsis; /* 한 줄일 때만 쓸 수 있는 속성. 해서 여러줄일 때 white-space:nowrap을 주어 줄바꿈 금지시켜주고 overflow: hidden을 주어 상자 밖으로 나가는 값을 없애줌. 이 세 값은 세트 */
+  white-space: nowrap;
+  overflow: hidden;/* flex-grow값이 있으면 속성이 먹지 않음.*/
+}
+.notice-more,
+.pds-more {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: pink;
+  padding: 8px;
+}
+.notice-more::before,
+.pds-more::before {
+  color: hsla(110, 50%, 30%, 1)/*hue, saturation, lighteness, alpha css에서 지원하는 함수. */
 }
 
 
