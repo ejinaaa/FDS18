@@ -645,7 +645,70 @@ a {
   color: hsla(110, 50%, 30%, 1)/*hue, saturation, lighteness, alpha css에서 지원하는 함수. */
 }
 
+/* 새소식 */
+.news {
+  position: relative;
+}
+.news::before {
+  content:"";
+  position: absolute;/*content 내용이 없으면 아무리 position으로 블록요소로 바뀌어도 너비를 가지지 않음. */
+  top: 35px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #ccc linear-gradient(to right, #ccc, #fff);
+}
+.news-heading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ed702d;
+  margin: 0;
+}
+.news-article {
+  margin-top: 35px;
+}
+.news-article-link {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  grid-template-rows: auto auto auto;/*auto값을 입력하면 아이템 갯수에 따라 열/행이 만들어짐.*/
+  grid-template-areas: 'thumbnail subject' 'thumbnail date' 'thumbnail brief';/*3행 2개열에 누가 배치될지 그리드 네임을 사용해 명시적으로 알려줌.*/
+}
+.news-article-subject {
+  margin: 0 0 5px;/*그리드는 마진이 겹치지 않음*/
+  grid-area: subject;
+  font-size: 1.5rem;
+}
+.news-article-date {
+  grid-area: date;
+}
+.news-article-brief {
+  margin: 10px 0;
+  grid-area: brief;
+  line-height: 1.5;
+}
+.news-article-thumbnail {
+  margin: 0;
+  grid-area: thumbnail;
+  /* text-align: center; */
+}
+.news-article-thumbnail img {
+  box-shadow: 0 15px 15px 0 #aaa;
+}
+.news-article-thumbnail figcaption {
+  margin-top: 15px;
+  margin-right: 18px;
+  text-align: center;
+}
+.news-more {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+}
+.news-more::before {
+  color: hsla(110, 50%, 30%, 1);
 
+}
 
 .group3{
   width: 190px;

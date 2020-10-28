@@ -1,4 +1,10 @@
 // jQuery를 이욯한 절치형 프로그래밍
+
+// 메인 메뉴
+
+
+
+// 공지사항 및 자료실탭 메뉴
 var section = $('.board section'); // $대신 jQuery를 써도 됨. = querySelector(), querySelectorAll()
 var tab = $('.board .tab a');
 var item = $('.board li');

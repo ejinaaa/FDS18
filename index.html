@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
 <!--lang속성으로 해당 문서의 언어를 지정해줌. 값을 ko를 넣어도 되지만 ko-KR를 넣어 남한에서 사용하는 한국어를 표시.-->
-
 <head>
   <meta charset="UTF-8">
   <!--문자의 인코딩방식 선언. utf-8은 다국어 지원-->
@@ -13,7 +12,6 @@
   <script src="./js/jquery.min.js" defer></script><!--선언 순서 중요-->>
   <script src="./js/index.js" defer></script>
 </head>
-
 <body>
   <div class="skip-nav"><a href="#">본문 바로가기</a></div>
   <!--접근성을 고려해 웹에서 키보드의 탭키로 콘텐츠 이동 시 반복되는 내용(내비)을 스킵. 가장 첫머리에 삽입.-->
@@ -225,7 +223,7 @@
       </section>
     </div>
     <div class="group group2">
-      <h2 class="a11y-hidden">검색</h2>
+      <h2 class="a11y-hidden">검색</h2><!--heading요소와 콘텐츠 영역을 section/article등의 태그로 감싸지 않으면 암묵적인 아웃라인을 생성.-->
       <form method="POST" action="https://formspree.io/seulbinim@gmail.com" class="search-form">
         <fieldset>
           <!--html5에서는 생략 가능하지만 명시적으로 넣어주는 것이 좋음.-->
@@ -309,7 +307,31 @@
         </section>
       </div>
       <section class="news">
-        <h2 class="news-heading">새소식</h2>
+        <h2 class="news-heading" id="newsHeading">새소식</h2>
+        <article class="news-article">
+          <a href="#" class="news-article-link">
+            <h3 class="news-article-subject">
+              W3C 사이트가 리뉴얼 되었습니다.
+            </h3>
+            <time class="news-article-date" datetime="2020-10-28T14:19:07">
+              2020.10.28
+            </time>
+            <p class="news-article-brief">
+              디자인 및 다양한 view 환경을 고려하여 구성되어 있으며,
+              기존보다 최신 정보 및 개발자를 위한 기술 가이드도
+              찾기 쉽도록 구성되어 있습니다.
+            </p>
+            <figure class="news-article-thumbnail">
+              <img src="./images/news.gif" alt="" aria-labelledby="newsArticleThumbnail">
+              <!--alt속성은 생략하면 src속성을 스크린리더가 읽게됨. 대체텍스트를 넣지 않을 경우 값을 null로 줌-->
+              <figcaption id="newsArticleThumbnail">
+                W3C 리뉴얼
+              </figcaption>
+            </figure>
+            <!--figure는 img, video, table 등의 캡션을 달 수 있는 콘텐츠에 캡션(figcaption)과 같이 묶어 사용-->
+          </a>
+        </article>
+        <a href="#" class="icon-plus news-more" title="새소식" aria-labelledby="newsHeading">더보기</a>
       </section>
     </div>
     <div class="group group3">group3</div>
