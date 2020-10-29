@@ -670,8 +670,8 @@ a {
 .news-article-link {
   display: grid;
   grid-template-columns: 130px 1fr;
-  grid-template-rows: auto auto auto;/*auto값을 입력하면 아이템 갯수에 따라 열/행이 만들어짐.*/
-  grid-template-areas: 'thumbnail subject' 'thumbnail date' 'thumbnail brief';/*3행 2개열에 누가 배치될지 그리드 네임을 사용해 명시적으로 알려줌.*/
+  grid-template-rows: auto auto auto;/* */
+  grid-template-areas: 'thumbnail subject' 'thumbnail date' 'thumbnail brief';/*3행 2개열에 누가 배치될지 그리드 네임을 사용해 명시적으로 알려줌. 행 단위로 묶어서 작성.*/
 }
 .news-article-subject {
   margin: 0 0 5px;/*그리드는 마진이 겹치지 않음*/
@@ -712,8 +712,57 @@ a {
 
 .group3{
   width: 190px;
-  background: ;
 }
+/* 신규 이벤트 및 관련 사이트 */
+.gradient-box {
+  background: #ccc linear-gradient(to bottom, #ccc, #eee);
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px;
+}
+.event {
+  position: relative;
+}
+.event-heading,
+.related-heading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+.point-color {
+  color: #ed702d;
+}
+.event-thumbnail img {
+  border: 1px solid #aaa;
+  box-shadow: 5px 5px 0 0 #aaa;
+}
+.event-brief {
+  line-height: 1.5;
+}
+.event-brief em {
+  font-style: normal;
+}
+.btn-event {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.btn-prev,
+.btn-next {
+  border: 0;
+  padding: 18px 0 0 0;
+  width: 19px;
+  height: 18px;
+  overflow: hidden;
+  background: transparent url(./images/back_forward.png) 0 0 scroll no-repeat;
+}
+.btn-next {
+  background-position: -36px 0 !important;
+}
+
+
+
+
 .slogan {
   background: orange;
 }
