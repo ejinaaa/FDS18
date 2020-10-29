@@ -336,6 +336,33 @@
     </div>
     <div class="group group3">group3</div>
     <!-- <div class="clearfix"></div> float해제방법1 - 플롯 요소들의 마지막 형제요소로 빈 박스를 추가하고 css설정이 된 clearfix 클래스를 추가해 해제하는 방법이지만 유연하게 사용불가하기때문에 권장하지 않음. -->
+    <div class="gradient-box"><!--다자인을 입힐 목적으로 만든 요소에는 해당 스타일의 이름으로 클래스를 넣어 해당 클래스를 가진 요소들은 공통적으로 스타일을 입힐 수 있도록 하면 편함. 디자인 시스템으로 스타일을 변수처럼 사용하면 편함.-->
+      <section class="event">
+        <h2 class="event-heading">
+          신규 <span class="point-color">이벤트</span>
+        </h2>
+        <div id="eventDetail">
+          <p class="event-thumbnail"><img src="./images/free_gift.gif" alt="이벤트 경품 : 웹표준 핵심 가이드북2 도서 증정"></p><!--해당 이미지도 본문의 한 단락이라고 생각하면 p태그로 감싸 이미지를 넣어주어도 좋음. 눈에 보이지 않는 중요한 핵심 정보를 대체 텍스트에 넣어주어야함.-->
+          <p class="event-brief"><em>웹표준 핵심 가이드북 2 출시!</em></p><!--em태그로 해당 문구를 강조!!-->
+          <div class="btn-event">
+            <button type="button" class="btn-prev">이전 이벤트 보기</button><!--버튼 내용도 자세하게 알 수 있도록 작성.-->
+            <button type="button" class="btn-next">이전 이벤트 보기</button>
+          </div>
+        </div>
+      </section>
+      <section class="related">
+        <h2 class="related-heading">
+          관련 <span class="point-color">사이트</span>
+        </h2>
+        <ul class="related-list">
+          <li><a href="#">패스트 캠퍼스</a></li>
+          <li><a href="#">W3C</a></li>
+          <li><a href="#">CSS ZenGarden</a></li>
+          <li><a href="#">웹접근성 연구소</a></li>
+          <li><a href="#">MDN</a></li>
+        </ul>
+      </section>
+    </div>
   </main>
   <div class="slogan">slogan</div>
   <footer class="footer">
