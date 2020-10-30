@@ -357,25 +357,33 @@
         <ul class="related-list" tabindex="0">
           <li><a href="#">패스트 캠퍼스</a></li>
           <li><a href="#">W3C</a></li>
-          <li><a href="#">CSS ZenGarden</a></li>
+          <li><a href="#">CSS Zen Garden</a></li>
           <li><a href="#">웹접근성 연구소</a></li>
           <li><a href="#">MDN</a></li>
         </ul>
       </section>
     </div>
     <section class="favorite gradient-box">
-      <h2 class="favorite-heading">인기 <span class="point-color">사이트</span></h2>
+      <h2 class="favorite-heading" id="favoriteHeading">인기 <span class="point-color">사이트</span></h2>
       <ol class="favorite-list">
-        <li><a href="#">W3C</a><span class="rank-change-icon"></span></li>
-        <li><a href="#">CSS Zen Garden</a><span class="rank-change-icon"></span></li>
-        <li><a href="#">MDN</a><span class="rank-change-icon"></span></li>
-        <li><a href="#">Web Standards</a><span class="rank-change-icon"></span></li>
+        <li><a href="#">W3C</a><em class="up">상승</em></li>
+        <li><a href="#">Git&amp;Github</a><em class="down">하락</em></li>
+        <li><a href="#">MDN</a><em class="stop">멈춤</em></li>
+        <li><a href="#">Fastcapus</a><em class="up">상승</em></li>
       </ol>
-      <button class="btn-favorite"><span class="icon-more"></span>더보기</button>
+      <a href="#" class="icon-plus favorite-more" aria-labelledby="favoriteHeading">더보기</a>
     </section>
   </div>
   </main>
-  <div class="slogan">slogan</div>
+  <article class="slogan">
+    <h2 class="slogan-heading" title="웹카페에서 웹표준을">슬로건</h2>
+    <p class="slogan-brief">
+      <q cite="https://w3.org/WAI/">The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect.</q>Tim Berners-Lee, W3C Director and inventor of the World Wide Web
+    </p>
+    <footer class="a11y-hidden">
+      출처 : W3C, http://w3.org/WAI
+    </footer>
+  </article>
   <footer class="footer">
     <div class="footer-wrapper">footer</div>
   </footer>

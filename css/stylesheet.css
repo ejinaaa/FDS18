@@ -707,7 +707,6 @@ a {
 }
 .news-more::before {
   color: hsla(110, 50%, 30%, 1);
-
 }
 
 .group3{
@@ -727,8 +726,14 @@ a {
 .related {
   padding-top: 10px;
 }
+/* .group3 [class$="heading"] { /* $ => 'heading'으로 끝나는 클래스
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+} */
 .event-heading,
-.related-heading {
+.related-heading,
+.favorite-heading {
   font-size: 1.6rem;
   font-weight: 700;
   margin: 0;
@@ -791,9 +796,79 @@ a {
   /* padding: 0 15px; */
   padding-left: 20px;
 }
-
-
-
+/* 인기 사이트 */
+.favorite {
+  position: relative;
+  margin-top: 20px;
+}
+.favorite-list {
+  margin: 10px 0 0 0;
+  padding-left: 0;
+  /*overflow: hidden;이걸로 숫자 감추면 스크린리더로 감춰줌. list-style:none하면 숫자 안읽어줌.*/
+  list-style: none;
+  /* counter-reset: rank; 생략가능하고 생략되면 기본값*/
+}
+.favorite-list li {
+  position: relative;
+  margin-top: 8px;
+  counter-increment: rank; /*증가시킬 숫자의 변수 이름 지정*/
+  /* display: flex;
+  flex-flow: row nowrap;
+  align-items: center; IE는 지원안하므로 베스트는 아님*/
+}
+.favorite-list li::before {
+  content: counter(rank); /*counter함수 파라미터로 안에 counter-increment에서 지정한 이름 넣어줌*/
+  color: #fff;
+  font-size: 1.2rem;
+  display: inline-block;
+  padding: 2px 5px;
+  margin-right: 5px;
+  background-color: #999;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -9px;
+}
+.favorite-list a {
+  /* display: inline-block; */
+  display: block;
+  margin: 0 10px 0 20px;
+  /* margin-right: auto; 부모에 남은 여백을 해당 요소가 다 가지게 됨 */
+  /* flex-grow: 1; 부모에 남은 여백을 해당 요소가 다 가지게 됨*/
+}
+.up,
+.stop,
+.down {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  font-style: normal;/*텍스트를 감출거긴하지만 기울어진 글자의 끝이 보일 수도 있기 때문에*/
+  width: 9px;
+  height: 11px;
+  padding-top: 11px; /*패딩트릭을 사용한 IR기법*/
+  overflow: hidden;
+  background: url(./images/rank.png) no-repeat;
+}
+.up {
+  background-position: 0 0;
+}
+.stop {
+  background-position: 0 50%;
+}
+.down {
+  background-position: 0 100%;
+}
+.favorite-more {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  padding: 8px;
+}
+.favorite-more::before {
+  color: hsla(110, 50%, 30%, 1);
+}
 
 
 .slogan {
