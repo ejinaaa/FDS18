@@ -13,7 +13,7 @@
   <script src="./js/index.js" defer></script>
 </head>
 <body>
-  <div class="skip-nav"><a href="#">본문 바로가기</a></div>
+  <div class="skip-nav"><a href="#contents">본문 바로가기</a></div>
   <!--접근성을 고려해 웹에서 키보드의 탭키로 콘텐츠 이동 시 반복되는 내용(내비)을 스킵. 가장 첫머리에 삽입.-->
   <!--header.header{header} -> 에멧기능. 이렇게 쓰고 탭키 누르면 자동으로 완성됨. 중괄호안은 노드에 들어갈 내용-->
   <header class="header">
@@ -151,7 +151,7 @@
     <p class="visual-text">Web Standards &amp; Accessibility</p>
   </div>
   <!--main.main>div.group.group${group$}*3 에멧기능. $는 숫자를 표시하고 중괄호는 노드안에 들어갈 내용. -->
-  <main class="main clearfix">
+  <main class="main clearfix" id="contents">
     <div class="group group1">
       <section class="login">
         <h2 class="login-heading">로그인</h2>
@@ -388,7 +388,7 @@
       <a href="#" class="footer-logo">
         <img src="./images/footer_logo.png" alt="Web Cafe">
       </a>
-      <ul class="guide-lidst">
+      <ul class="guide-list">
         <li><a href="#">회사 소개</a></li>
         <li><a href="#">개인정보 보호정책</a></li>
         <li><a href="#">이메일주소 무단수집 거부</a></li>
@@ -405,7 +405,7 @@
       </small>
       <div class="badge">
         <img src="./images/html5_logo.png" alt="최신 웹표준 기술인 HTML5를 활용하였습니다.">
-        <img src="./images/css_logo.png" alt="최신 웹표준 CSS3 속성을 활요하였습니다.">
+        <img src="./images/css3_logo.png" alt="최신 웹표준 CSS3 속성을 활요하였습니다.">
       </div>
     </div>
   </footer>
